@@ -1,0 +1,216 @@
+.admin-sidebar {
+  width: 280px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  border-right: 1px solid var(--border-light);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.sidebar-brand {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sidebar-brand h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 1.5rem 0 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.875rem 1rem;
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.menu-item svg {
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+.menu-item.active {
+  background: var(--accent-blue-light);
+  color: var(--accent-blue);
+  position: relative;
+}
+
+.menu-item.active::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  width: 4px;
+  background: var(--accent-blue);
+  border-radius: 0 4px 4px 0;
+}
+
+.sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.logout-btn-sidebar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.875rem;
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--accent-rose);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.logout-btn-sidebar:hover {
+  background: var(--accent-rose);
+  color: white;
+}
+
+/* Navbar overrides for main layout */
+.navbar {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.navbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-right: 5px;
+}
+
+.user-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.user-icon {
+  font-size: 2rem;
+  color: var(--accent-blue);
+  margin-right: 12px;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.notification-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--accent-rose);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-btn {
+  display: none; /* Hidden in navbar because it's now in the sidebar footer */
+}
+
+/* Dashboard layout resets */
+.admin-dashboard, .employee-dashboard {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  .navbar, .dashboard-content {
+    margin-left: 0;
+  }
+}

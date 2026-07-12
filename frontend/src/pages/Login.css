@@ -1,0 +1,207 @@
+.login-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.login-left-panel {
+  flex: 1;
+  display: none;
+  background: linear-gradient(135deg, #0a0e17 0%, #1a2235 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .login-left-panel {
+    display: flex;
+  }
+}
+
+.login-left-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+  z-index: 1;
+}
+
+.login-brand {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+}
+
+.login-brand h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-brand p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.login-right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.login-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.input-container:focus-within .input-icon {
+  color: var(--accent-blue);
+}
+
+.login-error {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--accent-rose);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.5);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Floating Shapes Animation */
+.floating-shape {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.shape-1 { width: 300px; height: 300px; top: -100px; left: -100px; animation-delay: 0s; }
+.shape-2 { width: 400px; height: 400px; bottom: -150px; right: -100px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); animation-delay: -5s; }
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30px, 50px) rotate(10deg); }
+}

@@ -1,0 +1,54 @@
+.department-container {
+  padding: 0;
+}
+
+.department-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.department-header h2 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.add-department-form {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-department-form h3 {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.add-department-form .form-group {
+  margin-bottom: 20px;
+}
+
+.add-department-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.add-department-form .form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.department-table .action-buttons {
+  display: flex;
+  gap: 8px;
+}

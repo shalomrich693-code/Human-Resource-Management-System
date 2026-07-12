@@ -1,0 +1,58 @@
+.salary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.salary-stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.salary-stat-icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.salary-stat-info h3 {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.salary-stat-info p {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.salary-history-table {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.salary-history-table h3 {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  margin: 0;
+}

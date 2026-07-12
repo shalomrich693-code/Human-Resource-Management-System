@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f8fafc;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 280px; /* Same as sidebar width */
+  padding: 2rem;
+  min-height: 100vh;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  width: calc(100% - 280px);
+  position: relative;
+}
+
+.dashboard-content h2 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .dashboard-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    min-height: calc(100vh - 60px);
+    margin-top: 60px; /* Height of the sidebar header */
+  }
+  
+  .employee-sidebar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .employee-sidebar:hover {
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .sidebar-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .sidebar-nav {
+    display: none;
+    padding: 1rem 0;
+  }
+  
+  .employee-sidebar:hover .sidebar-nav {
+    display: block;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+  
+  .dashboard-content h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+}
+
+/* Error message */
+.error-message {
+  background-color: #fee2e2;
+  color: #9f1239;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Success message */
+.success-message {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
