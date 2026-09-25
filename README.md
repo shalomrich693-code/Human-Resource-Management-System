@@ -1,86 +1,81 @@
-# ITSC Human Resource Management System (HRMS)
+# Human Resource Management System (HRMS)
 
-A premium, full-stack Human Resource Management System built with the MERN stack (MongoDB, Express, React, Node.js). It features a modern, glassmorphism-inspired dark theme UI, complete with an Admin Dashboard, Employee Dashboard, Attendance tracking, Leave Request management, and Payroll administration.
+## Overview
+
+A full-stack HR management application with separate admin and employee dashboards. It organizes employee records and supports department, attendance, leave, and salary workflows.
 
 ## Features
 
-*   **Secure Authentication:** Role-based access control (Admin & Employee) using JWT.
-*   **Modern Glassmorphic UI:** Premium dark theme with responsive sidebars, interactive data tables, and dynamic form layouts.
-*   **Admin Dashboard:**
-    *   **Employee Management:** Add, edit, view, and manage employees securely.
-    *   **Department Management:** Group employees logically by creating and modifying organizational departments.
-    *   **Leave Management:** Approve or reject leave requests submitted by employees.
-    *   **Attendance Tracking:** Monitor daily employee check-ins/outs with summary statistics.
-    *   **Payroll & Salary:** Add and track employee basic salaries, allowances, and deductions.
-*   **Employee Dashboard:**
-    *   **Self-Service Profile:** View and update personal information.
-    *   **Leave Applications:** Submit leave requests directly to admins.
-    *   **Salary History:** View personal salary and payroll history.
-    *   **Attendance Logging:** Check in and out of the system directly from the dashboard.
+- Admin and employee dashboards
+- Employee profile and department management
+- Attendance check-in and check-out
+- Employee leave requests and admin review
+- Salary records and employee salary history
+- JWT-based authentication with role-based access
 
-## Tech Stack
+## Technology Stack
 
-*   **Frontend:** React, React Router v6, Tailwind CSS, Axios, React Data Table Component, Framer Motion
-*   **Backend:** Node.js, Express.js
-*   **Database:** MongoDB, Mongoose
-*   **Security:** bcryptjs, JSON Web Tokens (JWT)
+- **Frontend:** React 19, React Router 7, Tailwind CSS, Axios
+- **Backend:** Node.js, Express 5
+- **Database:** MongoDB with Mongoose
+- **Authentication:** JSON Web Tokens (JWT), bcryptjs
+
+## Architecture
+
+The repository separates the Vite/React frontend in `frontend/` from the Express API in `server/`. The server exposes REST endpoints and persists employee, department, attendance, leave, salary, and user data through Mongoose models.
+
+## Authentication and Roles
+
+The application uses JWT-based authentication and distinguishes admin and employee dashboard workflows. Keep local environment secrets private. Demo access is available upon request.
 
 ## Project Structure
 
-*   `/frontend` - React application (Vite)
-*   `/server` - Express.js backend API
+- `frontend/` — React application and dashboard interfaces
+- `server/` — Express API, routes, controllers, middleware, and MongoDB models
+- Root `package.json` — project-level scripts and configuration
 
-## Setup Instructions
+## Local Setup
 
-### Prerequisites
-*   Node.js (v16+)
-*   MongoDB running locally or a MongoDB Atlas URI
+Requirements: Node.js 16 or later and MongoDB (local or Atlas).
 
-### 1. Clone & Install
+Install dependencies in each application directory:
+
 ```bash
-# Install server dependencies
 cd server
 npm install
-
-# Install client dependencies
 cd ../frontend
 npm install
 ```
 
-### 2. Environment Setup
-Create a `.env` file in the `/server` directory with the following variables:
-```
-PORT=3000
-MONGODB_URI=mongodb://127.0.0.1:27017/HRS
-JWT_KEY=your_secure_jwt_secret_key
-```
+Create a local `server/.env` with the environment variables required by the server, including its port, MongoDB connection string, and JWT signing key. Do not commit real credentials.
 
-### 3. Seed Database (Optional)
-To create an initial admin user (admin@gmail.com / admin123):
-```bash
-cd server
-npm run seed
-```
+Start the backend in one terminal:
 
-### 4. Run the Application
-Start both the backend and frontend development servers.
-
-**Terminal 1 (Backend):**
 ```bash
 cd server
 npm run dev
 ```
 
-**Terminal 2 (Frontend):**
+Start the frontend in another terminal:
+
 ```bash
 cd frontend
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`.
+The Vite development server is configured to serve the frontend at `http://localhost:5173`.
 
-## Demo Credentials
-*   **Admin:** admin@gmail.com / admin123
+## Engineering Highlights
 
-## License
-MIT License
+- Full-stack separation between React client and Express API
+- MongoDB data models and REST-style workflows
+- Role-based dashboard access
+- CRUD workflows for employee and department records
+- Attendance, leave, and salary data flows
+
+## Developer
+
+**Shalom Solomon**  
+Full Stack Developer | Mobile App Developer
+
+[Portfolio](https://portfolio-zeta-teal-99.vercel.app) · [GitHub](https://github.com/shalomrich693-code)
